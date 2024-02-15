@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+from subprocess import call
+from sys import argv
+from os import chdir
+
+# get proj name
+try: project_name = argv[1]
+except:
+    while True: 
+        if (project_name := input('Project Name> ').strip()) != '': break
+
+# make dir and venv
+if call( ['mkdir', project_name] ) != 0:
+    print('Error in creating dir.'); exit(2)
+
+chdir(f'./{project_name}')
+
+if call( ['python', '-m', 'venv', '.env'] ) != 0:
+    print('Error in creating env.'); exit(2)
+
+# make welcome script and other files
+with open('requirements.txt', 'w', encoding='utf-8') as file:
+    file.write('\n')
+
+with open('.env/.gitignore', 'w', encoding='utf-8') as file:
+    file.write('*\n')
+
+with open('README.md', 'w', encoding='utf-8') as file:
+    file.write(f'# {project_name}\n')
+
+with open('main.py', 'w', encoding='utf-8') as file:
+    file.write(
+            'print("Hello, World!")\n'
+            )
+
+print('Project and env created.')
