@@ -3,7 +3,7 @@
 pkgname=pymkproj
 pkgver=1.0
 pkgrel=1
-pkgdesc="Utility for making Python project directories structure"
+pkgdesc="Utility for making Python project tempelate"
 arch=('any')
 url="https://github.com/Tula-gingerbread/py-make-project"
 license=('GPL3')
