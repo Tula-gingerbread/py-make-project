@@ -8,7 +8,7 @@ arch=('any')
 url="https://github.com/Tula-gingerbread/py-make-project"
 license=('GPL3')
 depends=('python')
-source=("https://raw.githubusercontent.com/Tula-gingerbread/py-make-project/main/code/pymkproj")
+source=("file://${srcdir}/code/pymkproj")
 sha256sums=('a0bb5fbbd38e3870030b26ee61cf0441ef1c56f0aa7b91c72383edbfae4ed3fa')
 
 package() {
